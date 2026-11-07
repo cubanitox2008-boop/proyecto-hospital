@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+.main-header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.hospital-logo img {
+    height: 60px;
+    margin-right: 20px;
+    display: block;
+}
+.main-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: #495057;
+    padding: 20px;
+    color: white;
+}
+.sidebar h2 {
+    color: #00e676;
+    font-size: 18px;
+    margin-top: 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar li {
+    margin-bottom: 10px;
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+}
+.sidebar a.active {
+    background-color: #00e676;
+    color: black;
+    font-weight: bold;
+}
+
+.content-section {
+    flex: 1;
+    padding: 30px;
+}
+.content-section h2 {
+    margin-top: 0;
+    color: #333;
+}
+.subtitulo {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+.seccion-titulo {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.ambulancias-grid input[type="radio"] {
+    display: none;
+}
+
+.ambulancias-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.ambulancia-card {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 210px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.radio-dot {
+    height: 12px;
+    width: 12px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.ambulancia-card h3 {
+    margin-top: 0;
+    color: #0056b3;
+    font-size: 16px;
+}
+.ambulancia-card p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.ambulancias-grid input[type="radio"]:checked + .ambulancia-card {
+    border-color: #00e676;
+    background-color: #f0fff4;
+}
+.ambulancias-grid input[type="radio"]:checked + .ambulancia-card h3 {
+    color: #28a745;
+}
+.ambulancias-grid input[type="radio"]:checked + .ambulancia-card .radio-dot {
+    background-color: #00e676;
+}
+
+.detalles-traslado {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    max-width: 885px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #333;
+}
+.form-group select,
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-guardar {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+.btn-guardar:hover {
+    background-color: #212529;
+}
+
+[data-roles]:not(.rol-ok) { display: none !important; }
+
+.c-msg-ok, .c-msg-error { padding: 10px 14px; border-radius: 6px; margin: 12px 0; font-weight: bold; }
+.c-msg-ok { background: #e6f7ea; color: #1b6e31; border: 1px solid #b6e3c1; }
+.c-msg-error { background: #fdeaea; color: #a52a2a; border: 1px solid #f0b8b8; }
+.c-msg-ok:empty, .c-msg-error:empty { display: none; }
+
+.c-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 15px 0; }
+.c-form-grid label { display: block; font-weight: bold; margin-bottom: 5px; }
+.c-form-grid input, .c-form-grid select, .c-form-grid textarea,
+.c-filtros input, .c-filtros select {
+    width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 14px; box-sizing: border-box;
+}
+.c-ancho-total { grid-column: 1 / -1; }
+
+.c-filtros { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin: 15px 0; }
+.c-filtros > div { min-width: 170px; flex: 1; }
+.c-filtros label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px; }
+
+.c-tabla-contenedor { overflow-x: auto; }
+.c-tabla { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #fff; }
+.c-tabla th, .c-tabla td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+.c-tabla th { background: #2c3e50; color: #fff; white-space: nowrap; }
+.c-vacio { text-align: center; color: #666; padding: 15px; }
+
+.c-btn { display: inline-block; padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer;
+         background: #1f7a8c; color: #fff; font-size: 13px; margin: 2px; text-decoration: none; }
+.c-btn:hover { opacity: .88; }
+.c-btn-secundario { background: #6c757d; }
+.c-btn-peligro { background: #c0392b; }
+.c-btn-salir { margin-left: 10px; padding: 4px 10px; font-size: 12px; background: #fff; color: #2c3e50; }
+
+.c-badge { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 12px; font-weight: bold; background: #eee; color: #333; }
+.c-estado-Pendiente { background: #fff3cd; color: #7a5b00; }
+.c-estado-En-curso { background: #cfe2ff; color: #0a3d91; }
+.c-estado-En-destino { background: #d1ecf1; color: #0c5460; }
+.c-estado-Retorno { background: #e2d9f3; color: #4b2c82; }
+.c-estado-Finalizado { background: #d4edda; color: #1b6e31; }
+
+.c-resumen { display: flex; flex-wrap: wrap; gap: 15px; margin: 15px 0; }
+.c-dato { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px 22px; text-align: center; min-width: 150px; }
+.c-dato strong { display: block; font-size: 28px; color: #1f7a8c; }
+.c-grafico-fila { display: grid; grid-template-columns: 190px 1fr 90px; gap: 10px; align-items: center; margin: 6px 0; font-size: 14px; }
+.c-barra-fondo { background: #e9ecef; border-radius: 6px; height: 18px; overflow: hidden; }
+.c-barra { background: #1f7a8c; height: 100%; }
+.c-comentario { border-left: 4px solid #1f7a8c; background: #f6f9fa; padding: 8px 12px; margin: 8px 0; }
+.c-comentario small { color: #666; display: block; }

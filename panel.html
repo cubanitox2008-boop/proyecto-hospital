@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJDG Hospital - Panel Principal</title>
+    <link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark" style="position:relative;">
+        <span id="nombreUsuario" style="position:absolute; right:25px; top:50%; transform:translateY(-50%); color:#fff; font-weight:bold; white-space:nowrap;"></span>
+        <div class="container">
+            <img class="logo" src="IMG/logo-hc.svg" alt="">
+            <h1 class="logo-nav">AJDG-Hospital - Panel Principal</h1>
+        </div>
+    </nav>
+<div class="user-info">
+        </div>
+    <h2 style="margin-top: 40px;">Bienvenido al Sistema S.I.G.S.M.</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 40px;">Seleccione el módulo al que desea ingresar para trabajar:</p>
+
+    <div class="contenedor-seleccion">
+        
+        <a href="vehiculos.html" class="tarjeta-modulo">
+            <div class="icono-modulo" style="font-size: 40px;">🚑</div>
+            <h3>Gestión de Vehículos</h3>
+            <p>Control de ambulancias disponibles, choferes asignados y estado de traslados en tiempo real.</p>
+        </a>
+
+        <a href="indicaciones.html" class="tarjeta-modulo">
+            <div class="icono-modulo" style="font-size: 40px;">📋</div>
+            <h3>Indicaciones Médicas</h3>
+            <p>Historial clínico de pacientes, órdenes de médicos de guardia y tratamientos a seguir.</p>
+        </a>
+
+        <a href="encuesta.html" class="tarjeta-modulo">
+            <div class="icono-modulo" style="font-size: 40px;">🔍</div>
+            <h3>Encuesta y QR</h3>
+            <p>Escanear códigos QR de pacientes y acceder al panel de encuestas de satisfacción del hospital.</p>
+        </a>
+
+
+        <a href="resultados.html" class="tarjeta-modulo" data-roles="admin">
+            <div class="icono-modulo" style="font-size: 40px;">📊</div>
+            <h3>Resultados de Encuestas</h3>
+            <p>Estadísticas y comentarios anónimos de la encuesta de satisfacción.</p>
+        </a>
+
+        <a href="usuarios.html" class="tarjeta-modulo" data-roles="admin">
+            <div class="icono-modulo" style="font-size: 40px;">👥</div>
+            <h3>Gestión de Usuarios</h3>
+            <p>Asignar roles y administrar los usuarios del sistema.</p>
+        </a>
+
+    </div>
+    <script src="js/usuario.js"></script>
+</body>
+</html>

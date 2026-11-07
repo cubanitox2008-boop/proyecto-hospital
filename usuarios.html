@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.I.G.S.M. - Usuarios</title>
+    <link rel="stylesheet" href="css/encuesta.css">
+</head>
+<body data-roles-pagina="admin">
+
+    <header class="main-header" style="position:relative;">
+        <span id="nombreUsuario" style="position:absolute; right:25px; top:50%; transform:translateY(-50%); color:#fff; font-weight:bold; white-space:nowrap;"></span>
+        <div class="header-content">
+            <div class="hospital-logo">
+                <img src="IMG/logo-hc.svg" alt="Escudo Hospital">
+            </div>
+            <h1>AJDG-Hospital - Gestión de Usuarios</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <nav class="sidebar">
+            <h2>Navegación</h2>
+            <ul>
+                <li><a href="panel.html">Panel principal</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="indicaciones.html">Indicaciones Médicas</a></li>
+                <li><a href="encuesta.html">Encuesta</a></li>
+                <li data-roles="admin"><a href="resultados.html">Resultados de encuestas</a></li>
+                <li data-roles="admin"><a href="usuarios.html" class="active">Usuarios</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-section">
+            <h2>Gestión de Usuarios</h2>
+            <p class="subtitulo">Asigne el rol de cada usuario: administrador, enfermero, chofer o funcionario. Las personas se registran desde "Crear usuario" en el login.</p>
+
+            <div id="mensaje" role="alert"></div>
+
+            <div class="c-tabla-contenedor">
+                <table class="c-tabla">
+                    <thead>
+                        <tr><th>Nombre</th><th>Cédula</th><th>Rol</th><th>Acciones</th></tr>
+                    </thead>
+                    <tbody id="cuerpoUsuarios"></tbody>
+                </table>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/usuario.js"></script>
+    <script src="js/usuarios.js"></script>
+</body>
+</html>

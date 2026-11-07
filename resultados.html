@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.I.G.S.M. - Resultados de encuestas</title>
+    <link rel="stylesheet" href="css/encuesta.css">
+</head>
+<body data-roles-pagina="admin">
+
+    <header class="main-header" style="position:relative;">
+        <span id="nombreUsuario" style="position:absolute; right:25px; top:50%; transform:translateY(-50%); color:#fff; font-weight:bold; white-space:nowrap;"></span>
+        <div class="header-content">
+            <div class="hospital-logo">
+                <img src="IMG/logo-hc.svg" alt="Escudo Hospital">
+            </div>
+            <h1>AJDG-Hospital - Resultados de Encuestas</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <nav class="sidebar">
+            <h2>Navegación</h2>
+            <ul>
+                <li><a href="panel.html">Panel principal</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="indicaciones.html">Indicaciones Médicas</a></li>
+                <li><a href="encuesta.html">Encuesta</a></li>
+                <li data-roles="admin"><a href="resultados.html" class="active">Resultados de encuestas</a></li>
+                <li data-roles="admin"><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-section">
+            <h2>Resultados de la Encuesta de Satisfacción</h2>
+            <p class="subtitulo">Respuestas anónimas recibidas hasta el momento.</p>
+
+            <div id="mensaje" role="alert"></div>
+
+            <div class="c-resumen">
+                <div class="c-dato"><strong id="totalRespuestas">0</strong>Encuestas respondidas</div>
+                <div class="c-dato"><strong id="promedio">-</strong>Calificación promedio</div>
+            </div>
+
+            <h3>Calificación de la atención</h3>
+            <div id="graficoCalificaciones"></div>
+
+            <h3 style="margin-top:25px;">Sector visitado</h3>
+            <div id="graficoSectores"></div>
+
+            <h3 style="margin-top:25px;">Últimos comentarios</h3>
+            <div id="listaComentarios"></div>
+        </main>
+
+    </div>
+
+    <script src="js/usuario.js"></script>
+    <script src="js/resultados.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333333;
+    color: white;
+    gap: 15px;
+}
+.logo {
+    width: 150px;
+      display: flex;
+    justify-content: right
+
+}
+
+.contenedor-seleccion {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tarjeta-modulo {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    width: 320px;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-modulo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    border-color: #2ecc71;
+}
+
+.tarjeta-modulo h3 {
+    margin: 15px 0 10px 0;
+    color: #333;
+}
+
+.tarjeta-modulo p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+[data-roles]:not(.rol-ok) { display: none !important; }
+
+.c-msg-ok, .c-msg-error { padding: 10px 14px; border-radius: 6px; margin: 12px 0; font-weight: bold; }
+.c-msg-ok { background: #e6f7ea; color: #1b6e31; border: 1px solid #b6e3c1; }
+.c-msg-error { background: #fdeaea; color: #a52a2a; border: 1px solid #f0b8b8; }
+.c-msg-ok:empty, .c-msg-error:empty { display: none; }
+
+.c-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 15px 0; }
+.c-form-grid label { display: block; font-weight: bold; margin-bottom: 5px; }
+.c-form-grid input, .c-form-grid select, .c-form-grid textarea,
+.c-filtros input, .c-filtros select {
+    width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 14px; box-sizing: border-box;
+}
+.c-ancho-total { grid-column: 1 / -1; }
+
+.c-filtros { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin: 15px 0; }
+.c-filtros > div { min-width: 170px; flex: 1; }
+.c-filtros label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px; }
+
+.c-tabla-contenedor { overflow-x: auto; }
+.c-tabla { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #fff; }
+.c-tabla th, .c-tabla td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+.c-tabla th { background: #2c3e50; color: #fff; white-space: nowrap; }
+.c-vacio { text-align: center; color: #666; padding: 15px; }
+
+.c-btn { display: inline-block; padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer;
+         background: #1f7a8c; color: #fff; font-size: 13px; margin: 2px; text-decoration: none; }
+.c-btn:hover { opacity: .88; }
+.c-btn-secundario { background: #6c757d; }
+.c-btn-peligro { background: #c0392b; }
+.c-btn-salir { margin-left: 10px; padding: 4px 10px; font-size: 12px; background: #fff; color: #2c3e50; }
+
+.c-badge { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 12px; font-weight: bold; background: #eee; color: #333; }
+.c-estado-Pendiente { background: #fff3cd; color: #7a5b00; }
+.c-estado-En-curso { background: #cfe2ff; color: #0a3d91; }
+.c-estado-En-destino { background: #d1ecf1; color: #0c5460; }
+.c-estado-Retorno { background: #e2d9f3; color: #4b2c82; }
+.c-estado-Finalizado { background: #d4edda; color: #1b6e31; }
+
+.c-resumen { display: flex; flex-wrap: wrap; gap: 15px; margin: 15px 0; }
+.c-dato { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px 22px; text-align: center; min-width: 150px; }
+.c-dato strong { display: block; font-size: 28px; color: #1f7a8c; }
+.c-grafico-fila { display: grid; grid-template-columns: 190px 1fr 90px; gap: 10px; align-items: center; margin: 6px 0; font-size: 14px; }
+.c-barra-fondo { background: #e9ecef; border-radius: 6px; height: 18px; overflow: hidden; }
+.c-barra { background: #1f7a8c; height: 100%; }
+.c-comentario { border-left: 4px solid #1f7a8c; background: #f6f9fa; padding: 8px 12px; margin: 8px 0; }
+.c-comentario small { color: #666; display: block; }

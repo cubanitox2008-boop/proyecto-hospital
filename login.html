@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.I.G.S.M. - Hospital de Clínicas</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="hospital-logo">
+                <img src="IMG/logo-hc.svg" alt="Escudo Hospital"> 
+            </div>
+            <h1>AJDG-Hospital - Proyecto</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="login-box">
+            <h2>Inicio de Sesión</h2>
+            <hr>
+
+            <div class="texto-descripcion">
+                <h3>De que trata</h3>
+                <p>Estamos haciendo un Sistema Informático de Gestión de Servicios Médicos para el Hospital de Clínicas. Este software integrará dos módulos principales para optimizar la gestión hospitalaria. Gestión de Documentación digital para pacientes mediante códigos QR y encuestas de satisfacción. Trazabilidad y seguimiento en tiempo real de la flota de ambulancias y traslados médicos.</p>
+            </div>
+
+            <hr>
+
+                <form id="formLogin">
+    <div class="form-group">
+        <label for="usuario">Usuario (cédula)</label>
+        <input type="text" id="usuario" name="usuario" required autocomplete="username">
+    </div>
+
+                <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password">
+    </div>
+
+                <button type="submit" class="btn-ingresar">Ingresar</button>
+                <p id="mensaje" style="color: red;"></p>
+            </form>
+            <p>¿No tenés usuario? <a href="registro.html">Crear usuario</a></p>
+
+            <hr>
+
+            <div class="integrantes-seccion">
+                <h3>Integrantes del grupo</h3>
+                <p>Alejandro Naranjo</p>
+                <p>Diego Rios</p>
+                <p>Joaquin Fagundez</p>
+                <p>Gaston Pereira</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/validar.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+services:
+
+  # Contenedor WEB (se construye con el Dockerfile)
+  web:
+    build: .
+    container_name: hospital-web
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+    restart: always
+
+  # Contenedor de BASE DE DATOS
+  db:
+    image: mysql:8.4
+    container_name: hospital-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+    ports:
+      - "6033:3306"
+    volumes:
+      # Volumen: los datos persisten aunque se borre el contenedor
+      - datos:/var/lib/mysql
+      # Montaje directo: el .sql crea la base sola la primera vez
+      - ./sql:/docker-entrypoint-initdb.d:Z
+
+volumes:
+  datos:

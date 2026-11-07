@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.I.G.S.M. - Indicaciones Médicas</title>
+    <link rel="stylesheet" href="css/indicaciones.css">
+</head>
+<body>
+
+    <header class="main-header" style="position:relative;">
+        <span id="nombreUsuario" style="position:absolute; right:25px; top:50%; transform:translateY(-50%); color:#fff; font-weight:bold; white-space:nowrap;"></span>
+        <div class="header-content">
+            <div class="hospital-logo">
+                <img src="IMG/logo-hc.svg" alt="Escudo Hospital">
+            </div>
+            <h1>AJDG-Hospital - Indicaciones Médicas</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <nav class="sidebar">
+            <h2>Navegación</h2>
+            <ul>
+                <li><a href="panel.html">Panel principal</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="indicaciones.html" class="active">Indicaciones Médicas</a></li>
+                <li><a href="encuesta.html">Encuesta</a></li>
+                <li data-roles="admin"><a href="resultados.html">Resultados de encuestas</a></li>
+                <li data-roles="admin"><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-section">
+            <h2>Documentación - Indicaciones Médicas</h2>
+            <p class="subtitulo">Suba, consulte y administre los documentos del hospital.</p>
+
+            <div id="mensaje" role="alert"></div>
+
+            <form id="formDocumento" class="formulario-gestion" data-roles="admin,enfermero,funcionario">
+                <label class="seccion-titulo">Nuevo documento</label>
+                <div class="c-form-grid">
+                    <div>
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" maxlength="150" required>
+                    </div>
+                    <div>
+                        <label for="categoria">Especialidad / categoría:</label>
+                        <select id="categoria" required></select>
+                    </div>
+                    <div>
+                        <label for="paciente">Cédula del paciente (opcional):</label>
+                        <input type="text" id="paciente" maxlength="8" inputmode="numeric" placeholder="Debe estar registrado">
+                    </div>
+                    <div class="c-ancho-total">
+                        <label for="descripcion">Descripción (opcional):</label>
+                        <textarea id="descripcion" rows="3" maxlength="1000"></textarea>
+                    </div>
+                    <div class="c-ancho-total">
+                        <label for="archivo">Archivo:</label>
+                        <input type="file" id="archivo" accept=".pdf,.jpg,.jpeg,.png">
+                        <small id="ayudaArchivo">PDF, JPG o PNG. Máximo 5 MB.</small>
+                    </div>
+                </div>
+                <button type="submit" id="btnGuardar" class="btn-guardar">Confirmar</button>
+                <button type="button" id="btnCancelar" class="c-btn c-btn-secundario" style="display:none;">Cancelar edición</button>
+            </form>
+
+            <hr style="margin: 30px 0;">
+            <h2>Documentos registrados</h2>
+
+            <form id="formFiltros" class="c-filtros">
+                <div>
+                    <label for="filtroCategoria">Categoría</label>
+                    <select id="filtroCategoria"></select>
+                </div>
+                <div>
+                    <label for="filtroTexto">Título o nombre de paciente</label>
+                    <input type="text" id="filtroTexto">
+                </div>
+                <div>
+                    <label for="filtroPaciente">Cédula del paciente</label>
+                    <input type="text" id="filtroPaciente" maxlength="8">
+                </div>
+                <div>
+                    <button type="submit" class="c-btn">Filtrar</button>
+                    <button type="button" id="btnLimpiarFiltros" class="c-btn c-btn-secundario">Limpiar</button>
+                </div>
+            </form>
+
+            <div class="c-tabla-contenedor">
+                <table class="c-tabla">
+                    <thead>
+                        <tr>
+                            <th>Título</th><th>Categoría</th><th>Paciente</th><th>Archivo</th>
+                            <th>Fecha</th><th>Subido por</th><th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoDocumentos"></tbody>
+                </table>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/validar.js"></script>
+    <script src="js/usuario.js"></script>
+    <script src="js/documentos.js"></script>
+</body>
+</html>

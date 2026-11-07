@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+.main-header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.hospital-logo img {
+    height: 60px;
+    margin-right: 20px;
+    display: block;
+}
+.main-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.login-box {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.login-box h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.subtitulo {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.texto-descripcion h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.texto-descripcion p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+.btn-ingresar {
+    background-color: #00e676;
+    color: black;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn-ingresar:hover {
+    background-color: #00c862;
+}
+
+.integrantes-seccion {
+    text-align: center;
+}
+.integrantes-seccion h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #333;
+}
+.integrantes-seccion p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}

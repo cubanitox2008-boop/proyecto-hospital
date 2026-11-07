@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.I.G.S.M. - Vehículos</title>
+    <link rel="stylesheet" href="css/vehiculo.css">
+</head>
+<body>
+
+    <header class="main-header" style="position:relative;">
+        <span id="nombreUsuario" style="position:absolute; right:25px; top:50%; transform:translateY(-50%); color:#fff; font-weight:bold; white-space:nowrap;"></span>
+        <div class="header-content">
+            <div class="hospital-logo">
+                <img src="IMG/logo-hc.svg" alt="Escudo Hospital">
+            </div>
+            <h1>AJDG-Hospital - Vehículos</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <nav class="sidebar">
+            <h2>Navegación</h2>
+            <ul>
+                <li><a href="panel.html">Panel principal</a></li>
+                <li><a href="vehiculos.html" class="active">Vehículos</a></li>
+                <li><a href="indicaciones.html">Indicaciones Médicas</a></li>
+                <li><a href="encuesta.html">Encuesta</a></li>
+                <li data-roles="admin"><a href="resultados.html">Resultados de encuestas</a></li>
+                <li data-roles="admin"><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-section">
+            <h2>Gestión de Traslados en Ambulancia</h2>
+            <p class="subtitulo">Registre un traslado, haga el seguimiento de su estado y consulte el historial.</p>
+
+            <div id="mensaje" role="alert"></div>
+
+            <form id="formTraslado" class="formulario-gestion" data-roles="admin,enfermero">
+
+                <label class="seccion-titulo">1. Seleccione la Unidad Especializada:</label>
+                <div class="ambulancias-grid">
+
+                    <input type="radio" name="tipo_ambulancia" id="amb1" value="Emergencia Avanzada" required>
+                    <label for="amb1" class="ambulancia-card">
+                        <span class="radio-dot"></span>
+                        <h3>Urgencia / Avanzada</h3>
+                        <p><strong>Tipo:</strong> Reanimación (UTIM)</p>
+                        <p><strong>Equipo:</strong> Desfibrilador y respirador</p>
+                    </label>
+                    <input type="radio" name="tipo_ambulancia" id="amb2" value="Traslado Común">
+                    <label for="amb2" class="ambulancia-card">
+                        <span class="radio-dot"></span>
+                        <h3>Traslado Común</h3>
+                        <p><strong>Tipo:</strong> Baja complejidad</p>
+                        <p><strong>Equipo:</strong> Camilla y oxígeno básico</p>
+                    </label>
+                    <input type="radio" name="tipo_ambulancia" id="amb3" value="Unidad Pediátrica">
+                    <label for="amb3" class="ambulancia-card">
+                        <span class="radio-dot"></span>
+                        <h3>Unidad Pediátrica</h3>
+                        <p><strong>Tipo:</strong> Cuidados neonatales</p>
+                        <p><strong>Equipo:</strong> Incubadora portátil</p>
+                    </label>
+                    <input type="radio" name="tipo_ambulancia" id="amb4" value="Unidad Especial">
+                    <label for="amb4" class="ambulancia-card">
+                        <span class="radio-dot"></span>
+                        <h3>Unidad Especial</h3>
+                        <p><strong>Tipo:</strong> Traslado resguardado</p>
+                        <p><strong>Equipo:</strong> Cabina acolchada</p>
+                    </label>
+
+                </div>
+
+                <div class="detalles-traslado">
+                    <div class="c-form-grid">
+                        <div>
+                            <label for="vehiculo">Vehículo (matrícula):</label>
+                            <select id="vehiculo" required></select>
+                        </div>
+                        <div>
+                            <label for="chofer">Conductor:</label>
+                            <select id="chofer" required></select>
+                        </div>
+                        <div>
+                            <label for="enfermero">Enfermero:</label>
+                            <select id="enfermero"></select>
+                        </div>
+                        <div>
+                            <label for="acompanante">Acompañante:</label>
+                            <input type="text" id="acompanante" maxlength="100" placeholder="Nombre del acompañante">
+                        </div>
+                        <div>
+                            <label for="pacienteCedula">Cédula del paciente:</label>
+                            <input type="text" id="pacienteCedula" maxlength="8" inputmode="numeric" placeholder="Ej: 12345678" required>
+                        </div>
+                        <div>
+                            <label for="pacienteNombre">Nombre del paciente:</label>
+                            <input type="text" id="pacienteNombre" maxlength="100" placeholder="Nombre y apellido" required>
+                        </div>
+                        <div class="c-ancho-total">
+                            <label for="pacienteDatos">Datos del paciente (diagnóstico, cuidados, observaciones):</label>
+                            <textarea id="pacienteDatos" rows="3" maxlength="1000"></textarea>
+                        </div>
+                        <div>
+                            <label for="origen">Punto de Origen:</label>
+                            <input type="text" id="origen" maxlength="255" placeholder="Ej: Hospital de Clínicas - Piso 3" required>
+                        </div>
+                        <div>
+                            <label for="destino">Destino:</label>
+                            <input type="text" id="destino" maxlength="255" placeholder="Ej: Sanatorio, domicilio, otro centro" required>
+                        </div>
+                        <div>
+                            <label for="horaSalida">Hora de Salida:</label>
+                            <input type="time" id="horaSalida" required>
+                        </div>
+                        <div>
+                            <label for="horaLlegada">Hora de Llegada:</label>
+                            <input type="time" id="horaLlegada">
+                        </div>
+                        <div>
+                            <label for="estado">Estado del Traslado:</label>
+                            <select id="estado"></select>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="btnGuardar" class="btn-guardar">Confirmar y Enviar Ambulancia</button>
+                    <button type="button" id="btnCancelar" class="c-btn c-btn-secundario" style="display:none;">Cancelar edición</button>
+                </div>
+            </form>
+
+            <hr style="margin: 30px 0;">
+            <h2>Historial de Traslados</h2>
+
+            <form id="formFiltros" class="c-filtros">
+                <div>
+                    <label for="filtroPaciente">Paciente (cédula o nombre)</label>
+                    <input type="text" id="filtroPaciente">
+                </div>
+                <div>
+                    <label for="filtroVehiculo">Vehículo (matrícula)</label>
+                    <input type="text" id="filtroVehiculo">
+                </div>
+                <div>
+                    <label for="filtroEstado">Estado</label>
+                    <select id="filtroEstado"></select>
+                </div>
+                <div>
+                    <button type="submit" class="c-btn">Filtrar</button>
+                    <button type="button" id="btnLimpiarFiltros" class="c-btn c-btn-secundario">Limpiar</button>
+                </div>
+            </form>
+
+            <div class="c-tabla-contenedor">
+                <table class="c-tabla">
+                    <thead>
+                        <tr>
+                            <th>Unidad</th><th>Conductor</th><th>Enfermero</th><th>Paciente</th>
+                            <th>Origen</th><th>Destino</th><th>Horario</th><th>Estado</th><th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTraslados"></tbody>
+                </table>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/validar.js"></script>
+    <script src="js/usuario.js"></script>
+    <script src="js/vehiculos.js"></script>
+</body>
+</html>

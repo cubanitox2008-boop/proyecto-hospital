@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.I.G.S.M. - Encuesta</title>
+    <link rel="stylesheet" href="css/encuesta.css">
+</head>
+<body data-publica>
+
+    <header class="main-header" style="position:relative;">
+        <span id="nombreUsuario" style="position:absolute; right:25px; top:50%; transform:translateY(-50%); color:#fff; font-weight:bold; white-space:nowrap;"></span>
+        <div class="header-content">
+            <div class="hospital-logo">
+                <img src="IMG/logo-hc.svg" alt="Escudo Hospital">
+            </div>
+            <h1>AJDG-Hospital - Encuesta</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <nav class="sidebar">
+            <h2>Navegación</h2>
+            <ul>
+                <li><a href="panel.html">Panel principal</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="indicaciones.html">Indicaciones Médicas</a></li>
+                <li><a href="encuesta.html" class="active">Encuesta</a></li>
+                <li data-roles="admin"><a href="resultados.html">Resultados de encuestas</a></li>
+                <li data-roles="admin"><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-section">
+            <div class="encuesta-card">
+                <h2>Encuesta de Satisfacción</h2>
+                <p class="subtitulo">Tu opinión nos ayuda a mejorar la atención médica del hospital. Es anónima: no te pedimos ningún dato personal.</p>
+
+                <div id="mensaje" role="alert"></div>
+
+                <form id="formEncuesta">
+
+                    <div class="form-group">
+                        <label for="sector">¿Qué sector visitó hoy?</label>
+                        <select id="sector" required>
+                            <option value="">Seleccione una opción...</option>
+                            <option value="urgencias">Urgencias / Guardia</option>
+                            <option value="consultorio">Consultorios Externos</option>
+                            <option value="ambulancia">Servicio de Ambulancias</option>
+                            <option value="administracion">Administración</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>¿Cómo califica la atención recibida?</label>
+                        <div class="opciones-puntuacion">
+                            <div class="opcion-voto">
+                                <input type="radio" id="cal1" name="calificacion" value="1" required>
+                                <label for="cal1">Mala 😞</label>
+                            </div>
+                            <div class="opcion-voto">
+                                <input type="radio" id="cal2" name="calificacion" value="2">
+                                <label for="cal2">Regular 😐</label>
+                            </div>
+                            <div class="opcion-voto">
+                                <input type="radio" id="cal3" name="calificacion" value="3">
+                                <label for="cal3">Buena 🙂</label>
+                            </div>
+                            <div class="opcion-voto">
+                                <input type="radio" id="cal4" name="calificacion" value="4">
+                                <label for="cal4">Excelente 😁</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentario">Deje su comentario o sugerencia (opcional):</label>
+                        <input type="text" id="comentario" maxlength="500" placeholder="Escriba aquí sus comentarios...">
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar Encuesta</button>
+                </form>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/validar.js"></script>
+    <script src="js/usuario.js"></script>
+    <script src="js/encuesta.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.I.G.S.M. - Crear usuario</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="hospital-logo">
+                <img src="IMG/logo-hc.svg" alt="Escudo Hospital">
+            </div>
+            <h1>AJDG-Hospital - Crear usuario</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="login-box">
+            <h2>Crear usuario</h2>
+            <hr>
+
+            <form id="formRegistro">
+                <div class="form-group">
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" id="nombre" name="nombre" required maxlength="100"
+                           placeholder="Ej: Juan Pérez" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="ci">Cédula (será tu usuario)</label>
+                    <input type="text" id="ci" name="ci" required inputmode="numeric"
+                           maxlength="8" placeholder="Ej: 12345678" autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña (mínimo 6 caracteres)</label>
+                    <input type="password" id="password" name="password" required
+                           minlength="6" autocomplete="new-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="password2">Repetir contraseña</label>
+                    <input type="password" id="password2" name="password2" required
+                           minlength="6" autocomplete="new-password">
+                </div>
+
+                <button type="submit" class="btn-ingresar">Crear usuario</button>
+                <p id="mensaje" style="color: red;"></p>
+            </form>
+
+            <hr>
+            <p>¿Ya tenés usuario? <a href="login.html">Iniciar sesión</a></p>
+        </div>
+    </div>
+
+    <script src="js/validar.js"></script>
+    <script src="js/registro.js"></script>
+</body>
+</html>
